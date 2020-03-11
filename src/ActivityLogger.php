@@ -214,7 +214,8 @@ class ActivityLogger
             $this
                 ->useLog($this->defaultLogName)
                 ->withProperties([])
-                ->causedBy($this->auth->guard($this->authDriver)->user());
+                ->causedBy(backpack_user());
+                // ->causedBy($this->auth->guard($this->authDriver)->user());
         }
 
         return $this->activity;
